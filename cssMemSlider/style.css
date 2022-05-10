@@ -2,6 +2,10 @@ body {
     box-sizing: border-box;
 }
 
+div {
+    margin: 0;
+}
+
 .container {
     display: flex;
     justify-content: center;
@@ -15,6 +19,8 @@ body {
     flex-direction: column;
     width: 80%;
     overflow: hidden;
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 input {
@@ -40,6 +46,7 @@ img {
 
 .controls {
     display: flex;
+    align-self: center;
 }
 
 label {
@@ -47,9 +54,9 @@ label {
     background-color: #ddd;
     opacity: 0.5;
     width: 2rem;
-    height: 1rem;
-    border: 1rem solid rgb(71, 71, 71);
-    border-radius: 2rem;
+    height: 0.5rem;
+    border: 0.5rem solid rgb(71, 71, 71);
+    border-radius: 1rem;
     cursor: pointer;
     transition: all 0.5s;
 }
@@ -66,16 +73,19 @@ label:checked {
 .controls-natations-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .notations {
-    height: 1.2rem;
+    height: 2em;
     overflow: hidden;
 }
 
 .notations-overflow {
     height: 400%;
     transition: all 0.5s;
+    font: 1.5em/2rem 'Arial', sans-serif;
+    color: rgb(218, 218, 218);
 }
 
 #switch1:checked ~ .images-container{
@@ -96,13 +106,13 @@ label:checked {
 }
 
 #switch2:checked ~ .controls-natations-container .notations-overflow{
-	margin-top: -1.2rem;
+	margin-top: -2rem;
 }
 #switch3:checked ~ .controls-natations-container .notations-overflow{
-	margin-top: -2.4rem;
+	margin-top: -4rem;
 }
 #switch4:checked ~ .controls-natations-container .notations-overflow{
-	margin-top: -3.6rem;
+	margin-top: -6rem;
 }
 
 #switch1:checked ~ .controls-natations-container label:nth-child(1),
@@ -112,4 +122,16 @@ label:checked {
     background-color: rgb(67, 180, 255);
     opacity: 1;
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .controls-natations-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .notations-overflow {
+        font: 1.3em/2rem 'Arial', sans-serif;
+    }
 }
