@@ -66,6 +66,10 @@ label:hover {
     transform: scale(1.1);
 }
 
+label:active {
+    background-color: green;
+}
+
 label:checked {
     background-color: #fdd;
 }
@@ -121,7 +125,6 @@ label:checked {
 #switch4:checked ~ .controls-natations-container label:nth-child(4) {
     background-color: rgb(67, 180, 255);
     opacity: 1;
-    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
